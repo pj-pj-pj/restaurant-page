@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector("div#content"),t=document.createElement("header"),n=document.createElement("h1");e.appendChild(t),t.appendChild(n),n.textContent="CG",console.log("hello")})();
