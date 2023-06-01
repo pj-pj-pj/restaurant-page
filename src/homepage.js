@@ -2,35 +2,19 @@ import './style.css';
 import favicon from './assets/rolling-pin.png';
 import basket from './assets/basket.png';
 
-export default function homepageInit() {
+//header components
+const header = document.createElement('header');
+const icon = new Image();
+const navbar = document.createElement('ul');
+const home = document.createElement('li');
+const menu = document.createElement('li');
+const contact = document.createElement('li');
+
+export default function init() {
   // home page
   const content = document.querySelector('div#content');
 
-  //header
-  const header = document.createElement('header');
-  const icon = new Image();
-  icon.src = favicon;
-  const navbar = document.createElement('ul');
-  navbar.className = 'navbar';
-  const home = document.createElement('li');
-  home.textContent = 'Home';
-  const menu = document.createElement('li');
-  menu.textContent = 'Menu';
-  const contact = document.createElement('li');
-  contact.textContent = 'Contact Us';
-  const hr = document.createElement('hr');
-  hr.className = 'active-page';
-  home.append(hr);
-  navbar.addEventListener('mouseover', (e) => {
-    if (e.target.className != 'navbar') {
-      e.target.appendChild(hr);
-    }
-  });
-  navbar.addEventListener('mouseout', (e) => {
-    if (e.target.textContent !== 'Home') {
-      e.target.removeChild(hr);
-    }
-  });
+  headerInit();
 
   //main
   const main = document.createElement('main');
@@ -59,15 +43,23 @@ export default function homepageInit() {
   headline.append(headOne, headTwo, headThree, welcome, brdbtn);
   mainText.append(buredu, line, headline);
 
-  // Experience the warm embrace of BREADS, where each bite is a heartfelt expression of love from the bakery realm
+  content.append(main);
+  main.append(mainText, bigImg);
+}
 
-  //footer
-  const footer = document.createElement('footer');
-  footer.innerHTML =
-    '<a href="https://www.flaticon.com/free-icons/bread" target="_blank" title="bread icons">Bread icons created by Freepik - Flaticon</a>';
+export function headerInit() {
+  debugger;
+  //header
+  icon.src = favicon;
+  navbar.className = 'navbar';
+  home.textContent = 'Home';
+  home.className = 'home';
+  menu.textContent = 'Menu';
+  menu.className = 'menu';
+  contact.textContent = 'Contact Us';
+  contact.className = 'contact';
 
-  content.append(header, main, footer);
+  content.append(header);
   header.append(icon, navbar);
   navbar.append(home, menu, contact);
-  main.append(mainText, bigImg);
 }
