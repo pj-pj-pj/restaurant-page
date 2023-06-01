@@ -71,9 +71,7 @@ export default function init() {
   const twt = new Image();
   twt.src = twtLogo;
   twtLink.appendChild(twt);
-
   smHolder.append(twtLink, fbLink, igLink);
-
 
   contact.append(contactHeader, form, contactDetails, smHolder);
 

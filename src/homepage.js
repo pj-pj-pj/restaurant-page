@@ -1,4 +1,5 @@
 import './style.css';
+import { changeContent } from './index.js';
 import favicon from './assets/rolling-pin.png';
 import basket from './assets/basket.png';
 
@@ -41,8 +42,13 @@ export default function init() {
     'Welcome to BREADS, a gastronomic haven where artisanal breads take center stage, offering a delectable symphony of flavors and textures for bread enthusiasts.';
   const brdbtn = document.createElement('button');
   brdbtn.textContent = 'Get Bread';
+  brdbtn.className = 'get-bread';
   headline.append(headOne, headTwo, headThree, welcome, brdbtn);
   mainText.append(buredu, line, headline);
+
+  brdbtn.addEventListener('click', () => {
+    changeContent('Menu');
+  });
 
   content.append(main);
   main.append(mainText, bigImg);

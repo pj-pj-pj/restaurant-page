@@ -5,11 +5,10 @@ import contactInit from './contactpage.js';
 
 document.querySelector("link[rel~='icon']").href = favicon;
 
-// homepageInit();
-contactInit();
+homepageInit();
 footerInit();
 
-let currentPage = 'contact';
+let currentPage = 'home';
 
 const navbar = document.querySelector('.navbar');
 const hr = document.createElement('hr');
@@ -30,9 +29,7 @@ navbar.addEventListener('mouseout', (e) => {
   document.querySelector(`.${currentPage}`).append(hr);
 });
 
-navbar.addEventListener('click', (e) => {
-  changeContent(e);
-});
+navbar.addEventListener('click', (e) => changeContent(e.target.textContent));
 
 function clearContent() {
   const content = document.querySelector('div#content');
@@ -41,20 +38,20 @@ function clearContent() {
   }
 }
 
-function changeContent(e) {
-  if (currentPage != 'Home' && e.target.textContent === 'Home') {
+export function changeContent(e) {
+  if (currentPage != 'home' && e === 'Home') {
     clearContent();
     homepageInit();
     currentPage = 'home';
   }
 
-  if (currentPage != 'Menu' && e.target.textContent === 'Menu') {
+  if (currentPage != 'menu' && e === 'Menu') {
     clearContent();
     menuInit();
     currentPage = 'menu';
   }
 
-  if (currentPage != 'Contact' && e.target.textContent === 'Contact Us') {
+  if (currentPage != 'contact' && e === 'Contact Us') {
     clearContent();
     contactInit();
     currentPage = 'contact';
