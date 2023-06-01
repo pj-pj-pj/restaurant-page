@@ -94,7 +94,8 @@ main {
 
 .text > h1:first-child,
 .headline h1:nth-child(2),
-#menu-header {
+#menu-header,
+#contact-header {
   color: var(--burnt-sienna);
 }
 
@@ -140,9 +141,10 @@ main button:hover {
 
 /* MENUPAGE */
 
-#menu-header {
+#menu-header,
+#contact-header {
   line-height: 0.8;
-  font-size: 35px;
+  font-size: 2em;
 }
 
 main#menu {
@@ -186,6 +188,71 @@ main#menu {
 .menu-item .price {
   margin-top: 3px;
   font-size: 18px;
+}
+
+/* CONTACT */
+#contact {
+  margin-left: 50px;
+  display: grid;
+  gap: 1rem 50px;
+  grid-template-columns: 1fr 1fr;
+}
+
+#contact-header {
+  grid-column: span 2;
+}
+
+form {
+  grid-row: span 2;
+  border: 1.5px solid var(--black);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  color: var(--sandy-brown);
+  font-family: inherit;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid var(--black);
+  background-color: var(--navajo-white);
+  margin: 10px;
+}
+
+form button {
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+.contact-details h2 {
+  font-size: 2rem;
+}
+
+.contact-details p {
+  font-size: 20px;
+}
+
+.social-media img {
+  padding: 10px;
+  border-radius: 15px;
+  max-height: 45px;
+}
+
+.social-media img:hover {
+  background-color: var(--sandy-brown);
+}
+
+.social-media {
+  display: flex;
+  align-self: flex-end;
+  padding-bottom: 15px;
+  gap: 15px;
 }
 
 /* footer */

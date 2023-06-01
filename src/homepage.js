@@ -25,6 +25,7 @@ export default function init() {
   buredu.textContent = 'ブレドゥ';
   const bigImg = new Image();
   bigImg.src = basket;
+  bigImg.className = 'home-img';
   const line = document.createElement('div');
   line.className = 'line';
   const headline = document.createElement('div');

@@ -1,13 +1,15 @@
 import favicon from './assets/rolling-pin.png';
 import homepageInit from './homepage';
 import menuInit from './menupage';
+import contactInit from './contactpage.js';
 
 document.querySelector("link[rel~='icon']").href = favicon;
 
-homepageInit();
+// homepageInit();
+contactInit();
 footerInit();
 
-let currentPage = 'home';
+let currentPage = 'contact';
 
 const navbar = document.querySelector('.navbar');
 const hr = document.createElement('hr');
@@ -54,6 +56,7 @@ function changeContent(e) {
 
   if (currentPage != 'Contact' && e.target.textContent === 'Contact Us') {
     clearContent();
+    contactInit();
     currentPage = 'contact';
   }
 
@@ -64,6 +67,6 @@ function footerInit() {
   const footer = document.createElement('footer');
   const body = document.querySelector('body');
   footer.innerHTML =
-    '<a href="https://www.flaticon.com/free-icons/bread" target="_blank" title="bread icons">Bread icons created by Freepik - Flaticon</a>';
+    '<a href="https://www.flaticon.com/free-icons/bread" target="_blank" title="bread icons">Bread & Social Media Icons created by Freepik - Flaticon</a>';
   body.appendChild(footer);
 }
