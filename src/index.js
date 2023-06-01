@@ -2,6 +2,7 @@ import favicon from './assets/rolling-pin.png';
 import homepageInit from './homepage';
 import menuInit from './menupage';
 import contactInit from './contactpage.js';
+import { doc } from 'prettier';
 
 document.querySelector("link[rel~='icon']").href = favicon;
 
@@ -63,7 +64,13 @@ export function changeContent(e) {
 function footerInit() {
   const footer = document.createElement('footer');
   const body = document.querySelector('body');
-  footer.innerHTML =
-    '<a href="https://www.flaticon.com/free-icons/bread" target="_blank" title="bread icons">Bread & Social Media Icons created by Freepik - Flaticon</a>';
+  const credit = document.createElement('a');
+  credit.href = 'https://www.flaticon.com/free-icons/bread';
+  credit.target = '_blank';
+  credit.textContent = 'Bread & Social Media Icons created by Freepik - Flaticon';
+  const creditButMe = document.createElement('p');
+  creditButMe.textContent = 'Copyright © 2023 by PJ';
+
+  footer.append(credit, creditButMe);
   body.appendChild(footer);
 }
