@@ -80,7 +80,8 @@ header img {
   padding: 10px;
 }
 
-header img:hover {
+header img:hover,
+.menu-item img:hover {
   border-color: var(--sandy-brown);
 }
 
@@ -146,20 +147,36 @@ main button:hover {
 
 main#menu {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   grid-gap: 15px 50px;
   justify-content: center;
   margin-top: 10px;
 }
 
 .menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  height: 100%;
   padding: 10px;
   border-bottom: 1px solid var(--black);
   border-top: 1px solid var(--black);
+
+  align-items: center;
 }
 
 .menu-item:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 0px 0px;
+}
+
+.menu-item img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 4px dashed var(--burnt-sienna);
+
+  object-fit: cover;
 }
 
 .menu-item .name {
@@ -170,6 +187,7 @@ main#menu {
   margin-top: 3px;
   font-size: 18px;
 }
+
 /* footer */
 footer {
   font-size: 15px;

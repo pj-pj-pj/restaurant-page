@@ -48,7 +48,6 @@ export default function init() {
 }
 
 export function headerInit() {
-  debugger;
   //header
   icon.src = favicon;
   navbar.className = 'navbar';
