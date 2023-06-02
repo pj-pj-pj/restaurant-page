@@ -2,7 +2,6 @@ import favicon from './assets/rolling-pin.png';
 import homepageInit from './homepage';
 import menuInit from './menupage';
 import contactInit from './contactpage.js';
-import { doc } from 'prettier';
 
 document.querySelector("link[rel~='icon']").href = favicon;
 
