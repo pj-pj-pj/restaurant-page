@@ -12,7 +12,6 @@ const menu = document.createElement('li');
 const contact = document.createElement('li');
 
 export default function init() {
-  // home page
   const content = document.querySelector('div#content');
 
   headerInit();
