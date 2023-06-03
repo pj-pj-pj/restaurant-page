@@ -65,7 +65,8 @@ function footerInit() {
   const credit = document.createElement('a');
   credit.href = 'https://www.flaticon.com/free-icons/bread';
   credit.target = '_blank';
-  credit.textContent = 'Bread & Social Media Icons created by Freepik - Flaticon';
+  credit.textContent =
+    'Bread & Social Media Icons created by Freepik - Flaticon';
   const creditButMe = document.createElement('p');
   creditButMe.textContent = 'Copyright © 2023 by PJ';
 
