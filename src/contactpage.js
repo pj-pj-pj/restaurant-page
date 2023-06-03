@@ -4,24 +4,23 @@ import fbLogo from './assets/facebook-app-symbol.png';
 import igLogo from './assets/instagram.png';
 import twtLogo from './assets/twitter.png';
 
+
+
 export default function init() {
   homepageInit();
-
   const text = document.querySelector('.text');
   text.remove();
 
   const main = document.querySelector('main');
-
   const contact = document.createElement('div');
   contact.setAttribute('id', 'contact');
-
   contact.append(contactHeader, form, contactDetails, smHolder);
   main.append(contact);
 }
 
 const contactHeader = document.createElement('div');
 contactHeader.setAttribute('id', 'contact-header');
-const contHeader = (function () {
+(function contHeaderInit() {
   const header = document.createElement('h1');
   header.textContent = 'CONTACT US';
   const line = document.createElement('div');
@@ -30,7 +29,7 @@ const contHeader = (function () {
 })();
 
 const form = document.createElement('form');
-const formInit = (function () {
+(function formInit() {
   const inputFullName = document.createElement('input');
   inputFullName.type = 'text';
   inputFullName.name = 'fname';
@@ -50,7 +49,7 @@ const formInit = (function () {
 
 const contactDetails = document.createElement('div');
 contactDetails.className = 'contact-details';
-const contactDetailsInit = (function () {
+(function contactDetailsInit() {
   const contactText = document.createElement('h2');
   const basedText = document.createElement('h2');
   const ctDetails = document.createElement('p');
@@ -64,7 +63,7 @@ const contactDetailsInit = (function () {
 
 const smHolder = document.createElement('div');
 smHolder.className = 'social-media';
-const socialMediaInit = (function () {
+(function socialMediaInit() {
   const fbLink = document.createElement('a');
   fbLink.href = 'https://facebook.com';
   fbLink.target = '_blank';
