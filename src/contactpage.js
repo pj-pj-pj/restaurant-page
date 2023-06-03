@@ -9,7 +9,9 @@ import twtLogo from './assets/twitter.png';
 export default function init() {
   homepageInit();
   const text = document.querySelector('.text');
-  text.remove();
+  if (text !== null) {
+    text.remove();
+  }
 
   const main = document.querySelector('main');
   const contact = document.createElement('div');
