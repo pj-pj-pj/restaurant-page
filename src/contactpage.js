@@ -11,18 +11,26 @@ export default function init() {
   text.remove();
 
   const main = document.querySelector('main');
-  const contactHeader = document.createElement('div');
-  contactHeader.setAttribute('id', 'contact-header');
+
+  const contact = document.createElement('div');
+  contact.setAttribute('id', 'contact');
+
+  contact.append(contactHeader, form, contactDetails, smHolder);
+  main.append(contact);
+}
+
+const contactHeader = document.createElement('div');
+contactHeader.setAttribute('id', 'contact-header');
+const contHeader = (function () {
   const header = document.createElement('h1');
   header.textContent = 'CONTACT US';
   const line = document.createElement('div');
   line.className = 'line';
   contactHeader.append(header, line);
+})();
 
-  const contact = document.createElement('div');
-  contact.setAttribute('id', 'contact');
-
-  const form = document.createElement('form');
+const form = document.createElement('form');
+const formInit = (function () {
   const inputFullName = document.createElement('input');
   inputFullName.type = 'text';
   inputFullName.name = 'fname';
@@ -38,9 +46,11 @@ export default function init() {
   const inputSubmit = document.createElement('button');
   inputSubmit.textContent = 'Submit';
   form.append(inputFullName, inputEmail, inputMessage, inputSubmit);
+})();
 
-  const contactDetails = document.createElement('div');
-  contactDetails.className = 'contact-details';
+const contactDetails = document.createElement('div');
+contactDetails.className = 'contact-details';
+const contactDetailsInit = (function () {
   const contactText = document.createElement('h2');
   const basedText = document.createElement('h2');
   const ctDetails = document.createElement('p');
@@ -50,9 +60,11 @@ export default function init() {
   ctDetails.textContent = 'folafola@breads.com';
   btDetails.textContent = 'Nueva Ecija, Philippines';
   contactDetails.append(contactText, ctDetails, basedText, btDetails);
+})();
 
-  const smHolder = document.createElement('div');
-  smHolder.className = 'social-media';
+const smHolder = document.createElement('div');
+smHolder.className = 'social-media';
+const socialMediaInit = (function () {
   const fbLink = document.createElement('a');
   fbLink.href = 'https://facebook.com';
   fbLink.target = '_blank';
@@ -72,8 +84,4 @@ export default function init() {
   twt.src = twtLogo;
   twtLink.appendChild(twt);
   smHolder.append(twtLink, fbLink, igLink);
-
-  contact.append(contactHeader, form, contactDetails, smHolder);
-
-  main.append(contact);
-}
+})();
