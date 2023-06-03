@@ -13,30 +13,22 @@ let currentPage = 'home';
 const navbar = document.querySelector('.navbar');
 const hr = document.createElement('hr');
 hr.className = 'active-page';
-
 document.querySelector(`.${currentPage}`).append(hr);
 
 navbar.addEventListener('mouseover', (e) => {
-  if (e.target.className != 'navbar') {
+  if (e.target.className != 'navbar' && !e.target.contains(hr)) {
     e.target.appendChild(hr);
   }
 });
+
 navbar.addEventListener('mouseout', (e) => {
-  if (e.target.textContent != 'navbar') {
+  if (e.target.textContent != 'navbar' && !e.target.contains(hr)) {
     e.target.removeChild(hr);
   }
-
   document.querySelector(`.${currentPage}`).append(hr);
 });
 
 navbar.addEventListener('click', (e) => changeContent(e.target.textContent));
-
-function clearContent() {
-  const content = document.querySelector('div#content');
-  while (content.firstChild) {
-    content.removeChild(content.firstChild);
-  }
-}
 
 export function changeContent(e) {
   if (currentPage != 'home' && e === 'Home') {
@@ -58,6 +50,13 @@ export function changeContent(e) {
   }
 
   document.querySelector(`.${currentPage}`).append(hr);
+}
+
+function clearContent() {
+  const content = document.querySelector('div#content');
+  while (content.firstChild) {
+    content.removeChild(content.firstChild);
+  }
 }
 
 function footerInit() {
