@@ -25,7 +25,6 @@ menuHeader.setAttribute('id', 'menu-header');
 
 function displayMenu() {
   unchild(main);
-  console.log('hi');
 
   for (let item of items) {
     const itemHolder = document.createElement('div');
