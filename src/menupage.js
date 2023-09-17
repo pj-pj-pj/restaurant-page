@@ -1,6 +1,7 @@
 import './style.css';
 import { headerInit } from './homepage';
 import items from './menuItems';
+import { unchild } from './index.js';
 
 const content = document.querySelector('div#content');
 const main = document.createElement('main');
@@ -23,6 +24,9 @@ menuHeader.setAttribute('id', 'menu-header');
 })();
 
 function displayMenu() {
+  unchild(main);
+  console.log('hi');
+
   for (let item of items) {
     const itemHolder = document.createElement('div');
     itemHolder.className = 'menu-item';

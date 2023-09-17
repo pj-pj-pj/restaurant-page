@@ -59,6 +59,14 @@ function clearContent() {
   }
 }
 
+export function unchild(parent) {
+  var child = parent.firstChild;
+  while (child) {
+    child.remove();
+    child = parent.firstChild;
+  }
+}
+
 function footerInit() {
   const footer = document.createElement('footer');
   const body = document.querySelector('body');
