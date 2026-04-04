@@ -150,7 +150,7 @@
     "run-parallel": "^1.2.0",
     "safe-buffer": "^5.2.1",
     "schema-utils": "^3.1.2",
-    "serialize-javascript": "^6.0.1",
+    "serialize-javascript": "^7.0.5",
     "shallow-clone": "^3.0.1",
     "shebang-command": "^2.0.0",
     "shebang-regex": "^3.0.0",
